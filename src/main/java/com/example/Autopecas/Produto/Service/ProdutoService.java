@@ -1,13 +1,13 @@
 package com.example.Autopecas.Produto.Service;
 
 import com.example.Autopecas.Produto.Controller.Request.ProdutoPostRequest;
+import com.example.Autopecas.Produto.Controller.Request.ProdutoPutRequest;
 import com.example.Autopecas.Produto.Model.ProdutoModel;
 import com.example.Autopecas.Produto.Repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProdutoService {
@@ -19,8 +19,8 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
-    public Optional<ProdutoModel> buscarProdutoPorId(Long id) {
-        return  produtoRepository.findById(id);
+    public ProdutoModel buscarProdutoPorId(Long id) {
+        return  produtoRepository.findById(id).orElseThrow(() -> new RuntimeException("Cliente informado por Id não encontrado"));
     }
 
     public ProdutoModel salvarProduto(ProdutoPostRequest produtoPostRequest) {
@@ -33,10 +33,17 @@ public class ProdutoService {
         return produtoRepository.save(produto);
     }
 
-    public ProdutoModel atualizarProduto(){
-        return null;
+    public ProdutoModel atualizarProduto(Long id, ProdutoPutRequest produtoPutRequest){
+        ProdutoModel produtoModel = produtoRepository.findById(id).orElseThrow(() -> new RuntimeException("Produto informado por Id não encontrado"));
+        produtoModel.setDescricao(produtoPutRequest.getDescricao());
+        produtoModel.setValorVenda(produtoPutRequest.getValorVenda());
+        produtoModel.setQuantidade(produtoPutRequest.getQuantidade());
+        produtoModel.setFornecedor(produtoPutRequest.getFornecedorModel());
+
+        return produtoRepository.save(produtoModel);
     }
 
     public void excluirProduto(Long id) {
+        produtoRepository.deleteById(id);
     }
 }

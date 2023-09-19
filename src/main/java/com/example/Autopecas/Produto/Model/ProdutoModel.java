@@ -1,6 +1,5 @@
 package com.example.Autopecas.Produto.Model;
 
-import com.example.Autopecas.Fornecedor.Controller.Request.FornecedorPostRequest;
 import com.example.Autopecas.Fornecedor.Model.FornecedorModel;
 import com.example.Autopecas.Produto.Controller.Request.ProdutoPostRequest;
 
