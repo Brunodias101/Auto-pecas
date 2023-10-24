@@ -1,10 +1,10 @@
-package com.example.Autopecas.Service;
+package com.example.Autopecas.Cliente.Service;
 
 import com.example.Autopecas.AplicationConfigTest;
-import com.example.Autopecas.Controller.Request.ClientePostRequest;
-import com.example.Autopecas.Controller.Request.ClientePutRequest;
-import com.example.Autopecas.Model.ClienteModel;
-import com.example.Autopecas.Repository.ClienteRepository;
+import com.example.Autopecas.Cliente.Controller.Request.ClientePostRequest;
+import com.example.Autopecas.Cliente.Controller.Request.ClientePutRequest;
+import com.example.Autopecas.Cliente.Model.ClienteModel;
+import com.example.Autopecas.Cliente.Repository.ClienteRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -43,7 +43,7 @@ public class ClienteServiceTest extends AplicationConfigTest {
         // given
         Long id = 1L;
         ClienteModel clienteMock = new ClienteModel();
-        clienteMock.setId_cliente(id);
+        clienteMock.setIdCliente(id);
         clienteMock.setNome("Cliente de Teste");
         clienteMock.setTelefone("1111111111");
         clienteMock.setEmail("cliente@teste.com");
@@ -54,7 +54,7 @@ public class ClienteServiceTest extends AplicationConfigTest {
         ClienteModel clienteEncontrado = clienteService.buscarClientePorId(id);
 
         // then
-        Assertions.assertEquals(clienteMock.getId_cliente(), clienteEncontrado.getId_cliente());
+        Assertions.assertEquals(clienteMock.getIdCliente(), clienteEncontrado.getIdCliente());
         Assertions.assertEquals(clienteMock.getNome(), clienteEncontrado.getNome());
         Assertions.assertEquals(clienteMock.getTelefone(), clienteEncontrado.getTelefone());
         Assertions.assertEquals(clienteMock.getEmail(), clienteEncontrado.getEmail());
@@ -106,13 +106,13 @@ public class ClienteServiceTest extends AplicationConfigTest {
         clientePutRequest.setTelefone("123456789");
 
         ClienteModel clienteAntigo = new ClienteModel();
-        clienteAntigo.setId_cliente(id);
+        clienteAntigo.setIdCliente(id);
         clienteAntigo.setNome("Nome Antigo");
         clienteAntigo.setEmail("email@example.com");
         clienteAntigo.setTelefone("987654321");
 
         ClienteModel clienteAtualizado = new ClienteModel();
-        clienteAtualizado.setId_cliente(id);
+        clienteAtualizado.setIdCliente(id);
         clienteAtualizado.setNome(clientePutRequest.getNome());
         clienteAtualizado.setEmail(clientePutRequest.getEmail());
         clienteAtualizado.setTelefone(clientePutRequest.getTelefone());
@@ -124,7 +124,7 @@ public class ClienteServiceTest extends AplicationConfigTest {
         ClienteModel clienteRetornado = clienteService.atualizarCliente(id, clientePutRequest);
 
         // then
-        Assertions.assertEquals(clienteAtualizado.getId_cliente(), clienteRetornado.getId_cliente());
+        Assertions.assertEquals(clienteAtualizado.getIdCliente(), clienteRetornado.getIdCliente());
         Assertions.assertEquals(clienteAtualizado.getNome(), clienteRetornado.getNome());
         Assertions.assertEquals(clienteAtualizado.getEmail(), clienteRetornado.getEmail());
         Assertions.assertEquals(clienteAtualizado.getTelefone(), clienteRetornado.getTelefone());

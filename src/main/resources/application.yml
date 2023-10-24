@@ -6,3 +6,8 @@ spring:
     url: jdbc:mysql://localhost:3306/autopecas
     username: bruno
     password: bruno101
+
+  spring:
+    jackson:
+      serialization:
+        FAIL_ON_EMPTY_BEANS=false

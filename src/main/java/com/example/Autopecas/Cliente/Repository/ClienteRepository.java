@@ -1,6 +1,6 @@
-package com.example.Autopecas.Repository;
+package com.example.Autopecas.Cliente.Repository;
 
-import com.example.Autopecas.Model.ClienteModel;
+import com.example.Autopecas.Cliente.Model.ClienteModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

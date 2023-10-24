@@ -1,6 +1,6 @@
-package com.example.Autopecas.Model;
+package com.example.Autopecas.Cliente.Model;
 
-import com.example.Autopecas.Controller.Request.ClientePostRequest;
+import com.example.Autopecas.Cliente.Controller.Request.ClientePostRequest;
 
 import javax.persistence.*;
 
@@ -9,7 +9,7 @@ public class ClienteModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_cliente;
+    private Long idCliente;
 
     @Column(nullable = false)
     private String nome;
@@ -24,7 +24,7 @@ public class ClienteModel {
 
     }
     public ClienteModel(Long id_cliente, String nome, String telefone, String email) {
-        this.id_cliente = id_cliente;
+        this.idCliente = id_cliente;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
@@ -40,19 +40,19 @@ public class ClienteModel {
 
     public ClienteModel toClienteModel(Long id) {
         ClienteModel cliente = new ClienteModel();
-        cliente.setId_cliente(id);
+        cliente.setIdCliente(id);
         cliente.setNome(this.nome);
         cliente.setTelefone(this.telefone);
         cliente.setEmail(this.email);
         return cliente;
     }
 
-    public Long getId_cliente() {
-        return id_cliente;
+    public Long getIdCliente() {
+        return idCliente;
     }
 
-    public void setId_cliente(Long id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
     }
 
     public String getNome() {

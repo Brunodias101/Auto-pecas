@@ -1,10 +1,10 @@
-package com.example.Autopecas.Controller;
+package com.example.Autopecas.Cliente.Controller;
 
 
-import com.example.Autopecas.ClienteConversao.ClienteModelToPutRequestConverter;
-import com.example.Autopecas.Controller.Request.ClientePutRequest;
-import com.example.Autopecas.Model.ClienteModel;
-import com.example.Autopecas.Service.ClienteService;
+import com.example.Autopecas.FunctionsConversao.ToPutRequestConverter;
+import com.example.Autopecas.Cliente.Controller.Request.ClientePutRequest;
+import com.example.Autopecas.Cliente.Model.ClienteModel;
+import com.example.Autopecas.Cliente.Service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
     @Autowired
-    private ClienteModelToPutRequestConverter clienteModelToPutRequestConverter;
+    private ToPutRequestConverter clienteModelToPutRequestConverter;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

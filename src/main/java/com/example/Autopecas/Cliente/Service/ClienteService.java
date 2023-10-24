@@ -1,11 +1,11 @@
-package com.example.Autopecas.Service;
+package com.example.Autopecas.Cliente.Service;
 
-import com.example.Autopecas.Model.ClienteModel;
-import com.example.Autopecas.Repository.ClienteRepository;
+import com.example.Autopecas.Cliente.Controller.Request.ClientePostRequest;
+import com.example.Autopecas.Cliente.Controller.Request.ClientePutRequest;
+import com.example.Autopecas.Cliente.Model.ClienteModel;
+import com.example.Autopecas.Cliente.Repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.Autopecas.Controller.Request.*;
-
 
 import java.util.List;
 

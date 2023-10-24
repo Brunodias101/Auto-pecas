@@ -82,4 +82,7 @@ public class ProdutoModel {
         this.fornecedor = fornecedor;
     }
 
+    public void setIdProduto(Long idProduto) {
+        this.idProduto = idProduto;
+    }
 }

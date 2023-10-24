@@ -1,17 +1,17 @@
-package com.example.Autopecas.Controller.Request;
+package com.example.Autopecas.Cliente.Controller.Request;
 
 public class ClientePutRequest {
-    private Long id_cliente;
+    private Long idcliente;
     private String nome;
     private String telefone;
     private String email;
 
-    public Long getId_cliente() {
-        return id_cliente;
+    public Long getIdcliente() {
+        return idcliente;
     }
 
-    public void setId_cliente(Long id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setIdcliente(Long idcliente) {
+        this.idcliente = idcliente;
     }
 
     public String getNome() {

@@ -1,6 +1,5 @@
 package com.example.Autopecas.Fornecedor.Service;
 
-import com.example.Autopecas.Cliente.Model.ClienteModel;
 import com.example.Autopecas.Fornecedor.Controller.Request.FornecedorPostRequest;
 import com.example.Autopecas.Fornecedor.Controller.Request.FornecedorPutRequest;
 import com.example.Autopecas.Fornecedor.Model.FornecedorModel;
@@ -34,9 +33,9 @@ public class FornecedorService {
 
     public FornecedorModel atualizarFornecedor(Long id, FornecedorPutRequest fornecedorPutRequest){
         FornecedorModel fornecedorModel = fornecedorRepository.findById(id).orElseThrow(() -> new RuntimeException("Fornecedor informado por Id não encontrado"));
-        fornecedorModel.setNome(fornecedorModel.getNome());
+        fornecedorModel.setNome(fornecedorPutRequest.getNome());
         fornecedorModel.setValorCompra(fornecedorPutRequest.getValorCompra());
-        fornecedorModel.setAreaProduto(fornecedorModel.getAreaProduto());
+        fornecedorModel.setAreaProduto(fornecedorPutRequest.getAreaProduto());
         return fornecedorRepository.save(fornecedorModel);
     }
 

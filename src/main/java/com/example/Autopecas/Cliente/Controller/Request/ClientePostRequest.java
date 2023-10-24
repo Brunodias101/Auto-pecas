@@ -1,4 +1,4 @@
-package com.example.Autopecas.Controller.Request;
+package com.example.Autopecas.Cliente.Controller.Request;
 
 public class ClientePostRequest {
     private String nome;
